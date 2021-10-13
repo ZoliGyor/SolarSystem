@@ -244,4 +244,5 @@ public class SolarSystem extends JFrame
 			this.col = col;
 		}
 	}
+
 }
