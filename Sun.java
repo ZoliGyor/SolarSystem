@@ -7,5 +7,11 @@ public class Sun {
         this.colour = colour;
     }
 
-    
+    public double getDiameter(){
+        return this.diamaeter;
+    }
+
+    public String getColour(){
+        return this.colour;
+    }
 }
