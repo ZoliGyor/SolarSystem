@@ -12,4 +12,8 @@ public class Simulation {
     public void addPlanetToSolarSystem(Planet planet){
         solarSystem.drawSolarObjectAbout(planet.getDistance(), planet.getAngle(), planet.getDiameter(), planet.getColour(), planet.getCentreOfRotationDistance(), planet.getCentreOfRotationAngle());
     }
+
+    public void addMoonToSolarSystem(Moon moon){
+        solarSystem.drawSolarObjectAbout(moon.getDistance(), moon.getAngle(), moon.getDiameter(), moon.getColour(), moon.getCentreOfRotationDistance(), moon.getCentreOfRotationAngle());
+    }
 }
