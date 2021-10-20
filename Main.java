@@ -3,6 +3,7 @@ public class Main {
         SolarSystem solarSystem = new SolarSystem(1600, 1000);
         Simulation simulationSol = new Simulation(solarSystem);
         simulationSol.addSunToSolarSystem(new Sun(80, "YELLOW"));
+        simulationSol.addPlanetToSolarSystem(new Planet(150, 180, 20, "BLUE", 0, 0));
         
 
         /*for(int i = 0; i < 720; i++){

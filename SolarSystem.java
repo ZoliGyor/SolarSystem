@@ -245,9 +245,4 @@ public class SolarSystem extends JFrame
 		}
 	}
 
-	/*public void addSunToSolarSystem(Sun sun){
-		SolarObject solarObject = new SolarObject((int)0, (int)0, (int)sun.getDiameter(), this.getColourFromString(sun.getColour()));
-		things.add(solarObject);
-	}*/
-
 }

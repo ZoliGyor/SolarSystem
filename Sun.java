@@ -1,14 +1,14 @@
 public class Sun {
-    private double diamaeter;
+    private double diameter;
     private String colour;
 
-    public Sun(double diamaeter, String colour){
-        this.diamaeter = diamaeter;
+    public Sun(double diameter, String colour){
+        this.diameter = diameter;
         this.colour = colour;
     }
 
     public double getDiameter(){
-        return this.diamaeter;
+        return this.diameter;
     }
 
     public String getColour(){
