@@ -2,9 +2,8 @@ public class Main {
     public static void main(String[] args) {
         SolarSystem solarSystem = new SolarSystem(1600, 1000);
         Simulation simulationSol = new Simulation(solarSystem);
+        simulationSol.addSunToSolarSystem(new Sun(80, "YELLOW"));
         
-
-        //solarSystem.addSunToSolarSystem(new Sun(80, "YELLOW"));
 
         /*for(int i = 0; i < 720; i++){
             solarSystem.drawSolarObject(0, 0, 80, "YELLOW");
