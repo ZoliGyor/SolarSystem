@@ -1,16 +1,13 @@
-public class Planet {
+public class RevolvingObject extends ObjectInSolarSystem {
     private double distance;
     private double angle;
-    private double diameter;
-    private String colour;
     private double centreOfRotationDistance;
     private double centreOfRotationAngle;
 
-    public Planet(double distance, double angle, double diameter, String colour, double centreOfRotationDistance, double centreOfRotationAngle){
+    public RevolvingObject(double distance, double angle, double diameter, String colour, double centreOfRotationDistance, double centreOfRotationAngle){ 
+        super(diameter, colour); // do I need diameter and colour there???
         this.distance = distance;
         this.angle = angle;
-        this.diameter = diameter;
-        this.colour = colour;
         this.centreOfRotationAngle = centreOfRotationAngle;
         this.centreOfRotationDistance = centreOfRotationDistance;
     }
@@ -23,14 +20,6 @@ public class Planet {
         return angle;
     } 
 
-    public double getDiameter(){
-        return diameter;
-    }
-
-    public String getColour(){
-        return colour;
-    }
-
     public double getCentreOfRotationDistance(){
         return centreOfRotationDistance;
     }
@@ -39,4 +28,7 @@ public class Planet {
         return centreOfRotationAngle;
     }
 
+    public void setAngle(double value){
+        angle += value; 
+    }
 }

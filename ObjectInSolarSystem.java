@@ -1,8 +1,8 @@
-public class Sun {
+public class ObjectInSolarSystem {
     private double diameter;
     private String colour;
 
-    public Sun(double diameter, String colour){
+    public ObjectInSolarSystem(double diameter, String colour){
         this.diameter = diameter;
         this.colour = colour;
     }

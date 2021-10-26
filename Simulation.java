@@ -5,15 +5,11 @@ public class Simulation {
         this.solarSystem = solarSystem;
     }
 
-    public void addSunToSolarSystem(Sun sun){
-        solarSystem.drawSolarObject(0, 0, sun.getDiameter(), sun.getColour());
+    public void addObjectInSolarSystem(ObjectInSolarSystem objectInSolarSystem){
+        solarSystem.drawSolarObject(0, 0, objectInSolarSystem.getDiameter(), objectInSolarSystem.getColour());
     }
 
-    public void addPlanetToSolarSystem(Planet planet){
-        solarSystem.drawSolarObjectAbout(planet.getDistance(), planet.getAngle(), planet.getDiameter(), planet.getColour(), planet.getCentreOfRotationDistance(), planet.getCentreOfRotationAngle());
-    }
-
-    public void addMoonToSolarSystem(Moon moon){
-        solarSystem.drawSolarObjectAbout(moon.getDistance(), moon.getAngle(), moon.getDiameter(), moon.getColour(), moon.getCentreOfRotationDistance(), moon.getCentreOfRotationAngle());
+    public void addRevolvingObject(RevolvingObject revolvingObject){
+        solarSystem.drawSolarObjectAbout(revolvingObject.getDistance(), revolvingObject.getAngle(), revolvingObject.getDiameter(), revolvingObject.getColour(), revolvingObject.getCentreOfRotationDistance(), revolvingObject.getCentreOfRotationAngle());
     }
 }
