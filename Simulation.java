@@ -12,9 +12,9 @@ public class Simulation {
         solarSystem.drawSolarObject(0, 0, objectInSolarSystem.getDiameter(), objectInSolarSystem.getColour());
     }
 
-    public void addRevolvingObject(RevolvingObject revolvingObject, boolean hasAlreadyBeenCreated){
+    public void addRevolvingObject(RevolvingObject revolvingObject, boolean hasAlreadyBeenAdded){
         solarSystem.drawSolarObjectAbout(revolvingObject.getDistance(), revolvingObject.getAngle(), revolvingObject.getDiameter(), revolvingObject.getColour(), revolvingObject.getCentreOfRotationDistance(), revolvingObject.getCentreOfRotationAngle());
-        if(hasAlreadyBeenCreated){
+        if(!hasAlreadyBeenAdded){
             allRevolvingObjects.add(revolvingObject);
         }
     }
@@ -24,7 +24,7 @@ public class Simulation {
             this.addObjectInSolarSystem(centerObject);
             for(int j = 0 ; j < allRevolvingObjects.size(); j++){
                 allRevolvingObjects.get(j).move();
-                this.addRevolvingObject(allRevolvingObjects.get(j), false);
+                this.addRevolvingObject(allRevolvingObjects.get(j), true);
             }
             solarSystem.finishedDrawing();
         }
