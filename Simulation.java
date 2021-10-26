@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 public class Simulation {
     private SolarSystem solarSystem;
+    private ArrayList<RevolvingObject> allRevolvingObjects = new ArrayList<>();
 
     public Simulation(SolarSystem solarSystem){
         this.solarSystem = solarSystem;
@@ -9,7 +12,21 @@ public class Simulation {
         solarSystem.drawSolarObject(0, 0, objectInSolarSystem.getDiameter(), objectInSolarSystem.getColour());
     }
 
-    public void addRevolvingObject(RevolvingObject revolvingObject){
+    public void addRevolvingObject(RevolvingObject revolvingObject, boolean hasAlreadyBeenCreated){
         solarSystem.drawSolarObjectAbout(revolvingObject.getDistance(), revolvingObject.getAngle(), revolvingObject.getDiameter(), revolvingObject.getColour(), revolvingObject.getCentreOfRotationDistance(), revolvingObject.getCentreOfRotationAngle());
+        if(hasAlreadyBeenCreated){
+            allRevolvingObjects.add(revolvingObject);
+        }
+    }
+
+    public void startAnimation(ObjectInSolarSystem centerObject){
+        for(int i = 0; i < 720; i++){
+            this.addObjectInSolarSystem(centerObject);
+            for(int j = 0 ; j < allRevolvingObjects.size(); j++){
+                allRevolvingObjects.get(j).move();
+                this.addRevolvingObject(allRevolvingObjects.get(j), false);
+            }
+            solarSystem.finishedDrawing();
+        }
     }
 }

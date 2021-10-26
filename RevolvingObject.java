@@ -3,13 +3,15 @@ public class RevolvingObject extends ObjectInSolarSystem {
     private double angle;
     private double centreOfRotationDistance;
     private double centreOfRotationAngle;
+    private boolean revolvingAroundCenter;
 
-    public RevolvingObject(double distance, double angle, double diameter, String colour, double centreOfRotationDistance, double centreOfRotationAngle){ 
+    public RevolvingObject(double distance, double angle, double diameter, String colour, double centreOfRotationDistance, double centreOfRotationAngle, boolean revolvingAroundCenter){ 
         super(diameter, colour); // do I need diameter and colour there???
         this.distance = distance;
         this.angle = angle;
         this.centreOfRotationAngle = centreOfRotationAngle;
         this.centreOfRotationDistance = centreOfRotationDistance;
+        this.revolvingAroundCenter = revolvingAroundCenter;
     }
 
     public double getDistance(){
@@ -28,7 +30,10 @@ public class RevolvingObject extends ObjectInSolarSystem {
         return centreOfRotationAngle;
     }
 
-    public void setAngle(double value){
-        angle += value; 
+    public void move(){
+        angle++;
+        if(!revolvingAroundCenter){
+            centreOfRotationAngle++;
+        }
     }
 }
